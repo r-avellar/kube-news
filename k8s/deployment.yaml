@@ -73,12 +73,13 @@ kind: Service
 metadata:
   name: kube-news
 spec:
+  replicas: 3
   selector:
     app: kubenews
   ports:
   - port: 80
     targetPort: 8080
     nodePort: 30000
-  type: NodePort
+  type: LoadBalancer
 
 
