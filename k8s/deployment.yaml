@@ -45,6 +45,7 @@ kind: Deployment
 metadata:
   name: kubenews
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: kubenews
@@ -73,7 +74,6 @@ kind: Service
 metadata:
   name: kube-news
 spec:
-  replicas: 3
   selector:
     app: kubenews
   ports:
